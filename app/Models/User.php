@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,6 +20,9 @@ class User extends Authenticatable
   protected $fillable = [
     'name',
     'email',
+    'email_verified_at',
+    'avatar',
+    'blocked_at',
     'password',
   ];
 
@@ -43,5 +47,15 @@ class User extends Authenticatable
       'email_verified_at' => 'datetime',
       'password' => 'hashed',
     ];
+  }
+
+  /**
+   * User groups
+   *
+   * @return BelongsToMany
+   */
+  public function groups(): BelongsToMany
+  {
+    return $this->belongsToMany(Group::class, 'group_users');
   }
 }
