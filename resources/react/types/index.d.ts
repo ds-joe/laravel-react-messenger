@@ -1,5 +1,5 @@
-// Models
 import type { User } from "./Models/User";
+import type { TypeOptions } from "react-toastify";
 
 declare global {
 
@@ -7,7 +7,8 @@ declare global {
   export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
     auth: {
       user: User;
-      page_words: Record<string, string>
     };
+    page_words: Record<string, string>,
+    notification: { message: string; type: TypeOptions } | null;
   };
 }

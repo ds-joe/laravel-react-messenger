@@ -3,10 +3,10 @@ import MessengerLayout from "@/Layouts/Messenger";
 
 const Home: RP = () => {
   return (
-    <>home page </>
+    <>messenger page </>
   )
 }
 
-Home.layout = (page) => <MessengerLayout children={page} />
+Home.layout = (page) => <MessengerLayout children={page} title="Messenger" />
 
 export default Home;

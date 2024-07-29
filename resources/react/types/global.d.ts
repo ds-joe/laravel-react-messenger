@@ -24,4 +24,9 @@ declare global {
   type RPO<Props extends {} = {}> = React.FC<Props & {
     children?: ReactNode
   }>; // React Provider
+  type RPL<Props extends {} = {}> = React.FC<Props & {
+    children?: ReactNode;
+    title?: string;
+  }>; // React Layout
+
 }

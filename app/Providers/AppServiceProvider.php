@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Services\Inertia\Inertia;
+use App\Services\Notification\Notification;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
   public function boot(): void
   {
     $this->app->bind('Inertia', fn () => new Inertia());
+    $this->app->bind('Notification', fn () => new Notification());
   }
 }

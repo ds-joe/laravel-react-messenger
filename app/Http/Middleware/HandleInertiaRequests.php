@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Facade\Notification;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -34,6 +35,8 @@ class HandleInertiaRequests extends Middleware
       'auth' => [
         'user' => $request->user(),
       ],
+      "page_words" => [],
+      Notification::getSessionName() => Notification::getSessionNotification()
     ];
   }
 }
