@@ -1,5 +1,15 @@
-// Assets
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+// Providers
+import StoreProvider from "./Providers/Global/StoreProvider";
+import ThemeProvider from "./Providers/Global/ThemeProvider";
 
-const App: RPO = ({ children }) => children
+const App: RPO = ({ children }) => {
+  return (
+    <StoreProvider>
+      <ThemeProvider>
+        {children}
+      </ThemeProvider>
+    </StoreProvider>
+  );
+}
+
 export default App;

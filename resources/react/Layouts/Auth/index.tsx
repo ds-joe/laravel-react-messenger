@@ -1,17 +1,16 @@
 // Components
 import { Head } from "@inertiajs/react";
+import BackgroundBeams from "@/Components/Global/Aceternity/BackgroundBeams";
 
 // Providers
 import NotificationProvider from "@/Providers/Global/NotificationProvider";
 
-// Assets
-import "@/styles/style.scss";
-
 const AuthLayout: RPL = ({ children, title }) => {
   return (
-    <main className=" bg-body-secondary min-vh-100 w-100">
+    <main className="">
       <Head title={title} />
       <NotificationProvider>
+        <BackgroundBeams className="bg-gradient-to-tr from-base-100 to-base-200" />
         {children}
       </NotificationProvider>
     </main>
