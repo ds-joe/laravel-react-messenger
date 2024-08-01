@@ -3,6 +3,7 @@ import FormErrors from "./FormErrors";
 import FormInput from "./FormInput";
 import FormGroup from "./FormGroup";
 import FormGroupDouble from "./FormGroupDouble";
+import FormCheck from "./FormCheck";
 
 // Utils
 import cn from "@/utils/tailwindCn";
@@ -28,4 +29,5 @@ export {
   FormInput,
   FormGroup,
   FormGroupDouble,
+  FormCheck
 }

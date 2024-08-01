@@ -10,8 +10,9 @@ abstract class AuthController extends Controller
 
   public function __construct()
   {
-    $this->auth_layout_words =  array_merge([
-      // Put all layout words here.
-    ]);
+    $this->auth_layout_words =  array_merge(
+      __('components/layout/navbar'),
+      __('auth')
+    );
   }
 }

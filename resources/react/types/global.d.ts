@@ -2,7 +2,7 @@ import { AxiosInstance } from 'axios';
 import React, { ReactNode } from 'react';
 import { route as ziggyRoute } from 'ziggy-js';
 import { SetupOptions } from "@inertiajs/inertia-react";
-
+import type { PageProps } from "./index";
 
 declare global {
   interface Window {

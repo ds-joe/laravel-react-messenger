@@ -41,6 +41,6 @@ class RegisterController extends AuthController
       'email_verified_at' => now(),
       'password' => Hash::make($request->password)
     ]);
-    return redirect()->route('login')->with(Notification::create('Account Created Successfully.', NotificationType::success));
+    return redirect()->route('login')->with(Notification::create(__('auth.account_created'), NotificationType::success));
   }
 }

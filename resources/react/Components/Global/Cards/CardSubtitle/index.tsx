@@ -9,7 +9,7 @@ const CardSubtitle: RC<CardSubtitleProps> = (props) => {
   return (
     <p
       {...props}
-      className={cn('card-title text-lg font-normal', props.className)}>
+      className={cn('card-title text-[1rem] font-normal', props.className)}>
       {props.children}
     </p>
   )

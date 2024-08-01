@@ -35,9 +35,9 @@ class LoginController extends AuthController
   public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
   {
     if (Auth::attempt($request->only('email', 'password'), $request->get('remember', false))) {
-      return redirect()->route('messenger.home')->with(Notification::create('Login Successfully.', NotificationType::success));
+      return redirect()->route('messenger.home')->with(Notification::create(__('auth.login_success'), NotificationType::success));
     }
-    return redirect()->back()->with(Notification::create('Username or password not valid.', NotificationType::error));
+    return redirect()->back()->with(Notification::create(__('auth.login_invalid'), NotificationType::error));
   }
 
   /**
@@ -48,6 +48,6 @@ class LoginController extends AuthController
   public function logout(): \Illuminate\Http\RedirectResponse
   {
     Auth::logout();
-    return redirect()->back()->with(Notification::create('Logout Successfully.', NotificationType::success));
+    return redirect()->back()->with(Notification::create(__('auth.logout'), NotificationType::success));
   }
 }

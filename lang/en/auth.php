@@ -13,8 +13,21 @@ return [
     |
     */
 
+  'sign_in' => 'Sign in',
+  'email' => 'Email',
+  'password' => 'Password',
+  'name' => "Name",
+  'remember_me' => 'Remember Me',
+  'welcome_back' => "Welcome back",
+  'create_new_account' => "Create new account",
+  'already_have_an_account' => "Already have an account",
   'failed' => 'These credentials do not match our records.',
-  'password' => 'The provided password is incorrect.',
+  'password' => 'Password',
+  'confirm_password' => 'Confirm Password',
+  'account_created' => "Account created successfully.",
+  'login_invalid' => "Username or password not valid.",
+  'login_success' => "Login successfully.",
+  'logout' => "Logout successfully.",
   'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

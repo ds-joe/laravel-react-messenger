@@ -1,10 +1,11 @@
 import type { User } from "./Models/User";
 import type { TypeOptions } from "react-toastify";
+import type { Page } from '@inertiajs/core'
 
 declare global {
 
   // Server Page Props
-  export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
+  export type PageProps<T extends Record<string, any> = Page['props']> = T & {
     auth: {
       user: User;
     };

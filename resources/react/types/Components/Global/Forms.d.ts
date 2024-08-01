@@ -23,3 +23,7 @@ export interface FormGroupProps extends ComponentPropsWithoutRef<'div'> {
 export interface FormGroupDoubleProps extends ComponentPropsWithoutRef<'div'> {
   children?: ReactNode,
 }
+
+export interface FormCheckProps extends ComponentPropsWithoutRef<'input'> {
+  label?: ReactNode
+}

@@ -16,7 +16,7 @@ const Card: RC<CardProps> = (props) => {
   return (
     <div
       {...props}
-      className={cn('card border border-base-content/20 bg-base-100', props.className)}>
+      className={cn('card border border-base-content/20 bg-base-100 rounded-md', props.className)}>
       {props.children}
     </div>
   )
