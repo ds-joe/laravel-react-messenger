@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
    */
   public function boot(): void
   {
+
     $this->app->bind('Inertia', fn () => new Inertia());
     $this->app->bind('Notification', fn () => new Notification());
   }
