@@ -1,0 +1,12 @@
+:root {
+
+  // Dashboard Layout
+  --dashboard-layout-height: #{$dashboard-layout-height};
+  --dashboard-navbar-height: #{$dashboard-navbar-height};
+  --dashboard-layout-content-height: calc(#{$dashboard-layout-height} - #{$dashboard-navbar-height});
+
+  // Chat Layout
+  --chat-layout-user-navbar-height: #{$chat-layout-user-navbar-height};
+  --chat-layout-message-area-height: #{$chat-layout-message-area-height};
+  --chat-layout-content-height: #{$chat-layout-content-height};
+}

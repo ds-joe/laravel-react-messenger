@@ -9,8 +9,8 @@ abstract class DashboardController extends Controller
 
   public function __construct()
   {
-    $this->translateWords =  array_merge([
-      // Put all layout words here.
-    ]);
+    $this->translateWords = array_merge(
+      __('components/layout/dashboard/navbar'),
+    );
   }
 }

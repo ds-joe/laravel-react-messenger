@@ -1,0 +1,11 @@
+/* start-scss-docs Dashboard layout variables */
+$dashboard-layout-height: 100vh !default;
+$dashboard-navbar-height: 65px !default;
+$dashboard-layout-content-height: calc($dashboard-layout-height - $dashboard-navbar-height) !default;
+/* end-scss-docs Dashboard layout variables */
+
+/* start-scss-docs Chat layout variables */
+$chat-layout-user-navbar-height: 60px !default;
+$chat-layout-message-area-height: 65px !default;
+$chat-layout-content-height: calc($dashboard-layout-content-height - ($chat-layout-user-navbar-height + $chat-layout-message-area-height));
+/* end-scss-docs Chat layout variables */

@@ -18,7 +18,7 @@ class HomeController extends ChatController
   {
     return Inertia::render(
       RenderLayout::dashboard,
-      'chat/home',
+      'chat',
       $this->translateWords
     );
   }

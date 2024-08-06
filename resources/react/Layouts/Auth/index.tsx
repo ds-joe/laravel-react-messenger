@@ -1,7 +1,7 @@
 // Components
 import { Head } from "@inertiajs/react";
 import BackgroundBeams from "@/Components/Global/Aceternity/BackgroundBeams";
-import Navbar from "@/Components/Global/Layout/Navbar";
+import Navbar from "@/Components/Website/Layout/Navbar";
 
 // Providers
 import NotificationProvider from "@/Providers/Global/NotificationProvider";

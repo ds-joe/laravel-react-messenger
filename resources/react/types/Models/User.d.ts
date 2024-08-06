@@ -1,6 +1,12 @@
 export interface User {
   id: number;
-  name: string;
+  full_name: string;
+  phone: string;
+  avatar?: string | File;
   email: string;
-  email_verified_at: string;
+  is_admin: boolean;
+  email_verified_at?: string;
+  blocked_at?: string;
+  created_at?: string;
+  updated_at?: string
 }

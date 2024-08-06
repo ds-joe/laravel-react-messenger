@@ -2,13 +2,6 @@
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 
-// Ensure that the global window object has the correct types
-declare global {
-  interface Window {
-    Pusher: typeof Pusher;
-    Echo: Echo;
-  }
-}
 // Assign Pusher to the global window object
 window.Pusher = Pusher;
 

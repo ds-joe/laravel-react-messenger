@@ -37,8 +37,9 @@ class RegisterController extends AuthController
   public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
   {
     $user = User::create([
-      'name' => $request->name,
+      'full_name' => $request->full_name,
       'email' => $request->email,
+      'phone' => $request->phone,
       'email_verified_at' => now(),
       'password' => Hash::make($request->password)
     ]);
