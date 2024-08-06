@@ -4,6 +4,6 @@ namespace App\Services\Inertia\Enums;
 
 enum RenderLayout: string
 {
-  case messenger = 'Messenger';
-  case auth = "Auth";
+  case dashboard = 'Dashboard';
+  case website = "Website";
 }

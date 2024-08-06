@@ -20,9 +20,9 @@ class LoginController extends AuthController
   public function index(): Response
   {
     return Inertia::render(
-      RenderLayout::auth,
-      'login',
-      $this->auth_layout_words
+      RenderLayout::website,
+      'auth/login',
+      $this->translateWords
     );
   }
 
@@ -35,7 +35,7 @@ class LoginController extends AuthController
   public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
   {
     if (Auth::attempt($request->only('email', 'password'), $request->get('remember', false))) {
-      return redirect()->route('messenger.home')->with(Notification::create(__('auth.login_success'), NotificationType::success));
+      return redirect()->route('dashboard.chat')->with(Notification::create(__('auth.login_success'), NotificationType::success));
     }
     return redirect()->back()->with(Notification::create(__('auth.login_invalid'), NotificationType::error));
   }

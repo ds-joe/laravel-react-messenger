@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Messenger;
+namespace App\Http\Controllers\Dashboard\Chats;
 
 use App\Facade\Inertia;
 use App\Services\Inertia\Enums\RenderLayout;
 use Inertia\Response;
 
-class HomeController extends MessengerController
+class HomeController extends ChatController
 {
 
   /**
@@ -17,9 +17,9 @@ class HomeController extends MessengerController
   public function index(): Response
   {
     return Inertia::render(
-      RenderLayout::messenger,
-      'home',
-      $this->messenger_layout_words
+      RenderLayout::dashboard,
+      'chat/home',
+      $this->translateWords
     );
   }
 }

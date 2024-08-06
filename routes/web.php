@@ -1,5 +1,5 @@
 <?php
 
 
-require_once __DIR__ . "/auth.php";
-require_once __DIR__ . "/messenger.php";
+require_once __DIR__ . "/website/index.php";
+require_once __DIR__ . "/dashboard/index.php";

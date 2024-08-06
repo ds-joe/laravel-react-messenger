@@ -8,6 +8,7 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
 use App\Services\Inertia\Enums\RenderLayout;
 use App\Services\Notification\Enums\NotificationType;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Response;
 
@@ -21,9 +22,9 @@ class RegisterController extends AuthController
   public function index(): Response
   {
     return Inertia::render(
-      RenderLayout::auth,
-      'register',
-      $this->auth_layout_words
+      RenderLayout::website,
+      'auth/register',
+      $this->translateWords
     );
   }
 
@@ -35,12 +36,13 @@ class RegisterController extends AuthController
    */
   public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
   {
-    User::create([
+    $user = User::create([
       'name' => $request->name,
       'email' => $request->email,
       'email_verified_at' => now(),
       'password' => Hash::make($request->password)
     ]);
+    Auth::loginUsingId($user->id); # After sign up login with user id.
     return redirect()->route('login')->with(Notification::create(__('auth.account_created'), NotificationType::success));
   }
 }
