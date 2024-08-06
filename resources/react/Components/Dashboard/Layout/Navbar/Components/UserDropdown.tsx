@@ -1,8 +1,13 @@
 // Dependencies
-import { usePage } from "@inertiajs/react";
+import { usePage, router } from "@inertiajs/react";
 
 const UserDropdown: RC = () => {
   const { page_words } = usePage().props as PageProps;
+
+  // Handle user logout
+  const handleLogout = () => {
+    router.post(route('auth.logout'));
+  }
 
   return (
     <div className="dropdown dropdown-end">
@@ -22,7 +27,7 @@ const UserDropdown: RC = () => {
             <span className="badge">{page_words?.new}</span>
           </a>
         </li>
-        <li><a>{page_words?.logout}</a></li>
+        <li onClick={handleLogout}><a>{page_words?.logout}</a></li>
       </ul>
     </div>
   )

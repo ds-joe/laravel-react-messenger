@@ -15,8 +15,10 @@ return [
 
   'sign_in' => 'Sign in',
   'email' => 'Email',
+  'username' => 'Username',
   'password' => 'Password',
-  'name' => "Name",
+  'full_name' => "Full Name",
+  'phone' => "Phone",
   'remember_me' => 'Remember Me',
   'welcome_back' => "Welcome back",
   'create_new_account' => "Create new account",

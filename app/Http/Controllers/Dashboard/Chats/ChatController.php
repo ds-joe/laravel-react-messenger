@@ -10,6 +10,8 @@ abstract class ChatController extends DashboardController
   public function __construct()
   {
     parent::__construct();
-    $this->pushTranslateWords([]);
+    $this->pushTranslateWords(array_merge(
+      __("pages/chat"),
+    ));
   }
 }

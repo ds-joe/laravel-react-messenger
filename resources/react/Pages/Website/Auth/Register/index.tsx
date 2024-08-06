@@ -20,8 +20,9 @@ import authImage from "~/images/auth/auth-register.svg";
 const Register: RP = () => {
   const { page_words } = usePage().props as PageProps;
   const { data, setData, post, errors, processing } = useForm({
-    name: "",
+    full_name: "",
     email: "",
+    phone: "",
     password: "",
     confirm_password: ""
   });
@@ -49,10 +50,10 @@ const Register: RP = () => {
           <FormGroup>
             <FormInput
               type="text"
-              label={page_words?.name}
-              error={errors.name}
-              value={data.name}
-              onChange={(e) => setData('name', e.target.value)}
+              label={page_words?.full_name}
+              error={errors.full_name}
+              value={data.full_name}
+              onChange={(e) => setData('full_name', e.target.value)}
               required
             />
 
@@ -64,6 +65,16 @@ const Register: RP = () => {
               error={errors.email}
               value={data.email}
               onChange={(e) => setData('email', e.target.value)}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormInput
+              type="number"
+              label={page_words?.phone}
+              error={errors.phone}
+              value={data.phone}
+              onChange={(e) => setData('phone', e.target.value)}
               required
             />
           </FormGroup>

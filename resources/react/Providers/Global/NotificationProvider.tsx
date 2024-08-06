@@ -1,6 +1,6 @@
 // Dependencies
 import { usePage } from '@inertiajs/react';
-import { useEffect } from 'react';
+import { useEffect, Fragment } from 'react';
 
 // Providers
 import { ToastContainer } from "react-toastify";
@@ -39,10 +39,10 @@ const NotificationProvider: RPO = ({ children }) => {
   }, [notification]);
 
   return (
-    <>
+    <Fragment>
       {children}
       <ToastContainer {...toastsOptions} />
-    </>
+    </Fragment>
   )
 }
 

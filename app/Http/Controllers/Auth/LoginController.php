@@ -29,12 +29,12 @@ class LoginController extends AuthController
   /**
    * Login
    *
-   * @param Request $request
+   * @param LoginRequest $request
    * @return \Illuminate\Http\RedirectResponse
    */
   public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
   {
-    if (Auth::attempt($request->only('email', 'password'), $request->get('remember', false))) {
+    if (!$this->multiCredentials($request)) {
       return redirect()->route('dashboard.chat')->with(Notification::create(__('auth.login_success'), NotificationType::success));
     }
     return redirect()->back()->with(Notification::create(__('auth.login_invalid'), NotificationType::error));
@@ -49,5 +49,18 @@ class LoginController extends AuthController
   {
     Auth::logout();
     return redirect()->back()->with(Notification::create(__('auth.logout'), NotificationType::success));
+  }
+
+  /**
+   * Multi login credentials
+   * 
+   * @param LoginRequest $request
+   * @return bool
+   */
+  private function multiCredentials(LoginRequest $request): bool
+  {
+    if (Auth::attempt(['email' => $request->username, 'password' => $request->password], $request->get('remember', false))) return true;
+    if (Auth::attempt(['phone' => $request->username, 'password' => $request->password], $request->get('remember', false))) return true;
+    return false;
   }
 }

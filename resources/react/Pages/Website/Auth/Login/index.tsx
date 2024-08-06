@@ -20,7 +20,7 @@ import authImage from "~/images/auth/auth-network.svg";
 const Login: RP = () => {
   const { page_words } = usePage().props as PageProps;
   const { data, setData, post, errors, processing } = useForm({
-    email: "",
+    username: "",
     password: "",
     remember: false
   });
@@ -47,11 +47,12 @@ const Login: RP = () => {
           <FormErrors errors={errors} />
           <FormGroup>
             <FormInput
-              type="email"
-              label={page_words?.email}
-              error={errors.email}
-              value={data.email}
-              onChange={(e) => setData('email', e.target.value)}
+              type="text"
+              label={page_words?.username}
+              placeholder={`${page_words?.email} / ${page_words?.phone}`}
+              error={errors.username}
+              value={data.username}
+              onChange={(e) => setData('username', e.target.value)}
               required
             />
           </FormGroup>
