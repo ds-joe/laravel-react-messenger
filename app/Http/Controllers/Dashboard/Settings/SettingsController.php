@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\Chats;
+namespace App\Http\Controllers\Dashboard\Settings;
 
 use App\Http\Controllers\Dashboard\DashboardController;
 
-abstract class ChatController extends DashboardController
+class SettingsController extends DashboardController
 {
-
   public function __construct()
   {
     parent::__construct();
     $this->pushTranslateWords(array_merge(
-      __("pages/dashboard/chat"),
+      __('pages/dashboard/settings')
     ));
   }
 }

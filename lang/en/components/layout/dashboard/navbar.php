@@ -3,5 +3,6 @@
 return [
   'settings' => "Settings",
   'logout' => "Logout",
-  'new' => "New"
+  'new' => "New",
+  'chat' => "Chat",
 ];

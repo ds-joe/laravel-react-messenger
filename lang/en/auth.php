@@ -29,7 +29,8 @@ return [
   'account_created' => "Account created successfully.",
   'login_invalid' => "Username or password not valid.",
   'login_success' => "Login successfully.",
-  'logout' => "Logout successfully.",
+  'new' => "New",
+  'logout' => "Logout",
   'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

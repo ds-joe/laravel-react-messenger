@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Facade\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,8 +49,31 @@ class User extends Authenticatable
     return [
       'email_verified_at' => 'datetime',
       'password' => 'hashed',
+      'created_at' => 'date:Y-m-d',
     ];
   }
+
+  /**
+   * Handle avatar if there
+   *
+   * @param $value
+   * @return ?string
+   */
+  public function getAvatarAttribute($value): ?string
+  {
+    return $value ? Storage::getFileUrl($value) : null;
+  }
+
+  /**
+   * Get the original avatar raw in database.
+   *
+   * @return ?string
+   */
+  public function getAvatarRawAttribute(): ?string
+  {
+    return $this->attributes['avatar'];
+  }
+
 
   /**
    * User groups

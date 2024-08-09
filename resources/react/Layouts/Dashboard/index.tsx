@@ -8,12 +8,12 @@ import NotificationProvider from "@/Providers/Global/NotificationProvider";
 
 const DashboardLayout: RPL = ({ children, title }) => {
   return (
-    <main className="h-[var(--dashboard-layout-height)] bg-base-200 flex flex-col">
+    <main className="min-h-[var(--dashboard-layout-height)] bg-base-200 flex flex-col">
       <ThemeProvider>
         <NotificationProvider>
           <Head title={title} />
           <Navbar />
-          <section className="overflow-hidden w-full h-[var(--dashboard-layout-content-height)]">
+          <section className=" w-full min-h-[var(--dashboard-layout-content-height)]">
             {children}
           </section>
         </NotificationProvider>
