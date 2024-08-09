@@ -1,5 +1,6 @@
 <?php
 
 return [
-  "chat" => "Chat"
+  "chat" => "Chat",
+  'no_chat_selected' => "No Chat Selected"
 ];
