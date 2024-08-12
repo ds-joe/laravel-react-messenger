@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Facade\Notification;
+use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -30,6 +32,7 @@ class HandleInertiaRequests extends Middleware
    */
   public function share(Request $request): array
   {
+
     return [
       ...parent::share($request),
       'auth' => [

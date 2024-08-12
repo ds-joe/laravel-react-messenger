@@ -14,11 +14,12 @@ declare global {
   }
 
   // Server Page Props
-  export type PageProps<T extends Record<string, any> = Page['props']> = T & {
+  export type PageProps<T extends Record<string, any> = {}> = T & {
+
     auth: {
       user: User;
     };
     page_words: Record<string, string>,
     notification: { message: string; type: TypeOptions } | null;
-  };
+  } & Page['props'];
 }

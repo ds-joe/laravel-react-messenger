@@ -45,7 +45,6 @@ const Chat: RP = () => {
 }
 
 Chat.layout = (page) => {
-  console.log(page.props)
   return (
     <DashboardLayout title={page.props.page_words?.chat}>
       <ChatLayout children={page} />

@@ -16,6 +16,10 @@ class Conversation extends Model
     'user_id2'
   ];
 
+  protected $casts = [
+    'created_at' => 'datetime:h:i A', // Format for 12-hour time with AM/PM
+  ];
+
   /**
    * Get last message
    *

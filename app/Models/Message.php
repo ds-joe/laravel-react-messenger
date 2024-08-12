@@ -19,6 +19,10 @@ class Message extends Model
     'conversation_id'
   ];
 
+  protected $casts = [
+    'created_at' => 'datetime:h:i A', // Format for 12-hour time with AM/PM
+  ];
+
   /**
    * Get sender user
    *

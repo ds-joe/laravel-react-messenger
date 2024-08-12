@@ -13,7 +13,6 @@ const chatsSettingsSlice = createSlice({
   reducers: chatsActions,
 })
 
-// Action creators are generated for each case reducer function
-export const { setSelectedChat } = chatsSettingsSlice.actions;
+export const { setSelectedChat, unselectSidebarChat, setOnlineUsers, removeUser, addUser, setSidebarChats } = chatsSettingsSlice.actions;
 
 export default chatsSettingsSlice.reducer

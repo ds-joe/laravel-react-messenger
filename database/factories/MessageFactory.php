@@ -59,7 +59,8 @@ class MessageFactory extends Factory
             'message' => fake()->realText(300),
             'sender_id' => $sender_id,
             'receiver_id' => $receiver_id,
-            'group_id' => $group_id
+            'group_id' => $group_id,
+            'created_at' => fake()->dateTimeBetween('-1 year', 'now')
         ];
     }
 }

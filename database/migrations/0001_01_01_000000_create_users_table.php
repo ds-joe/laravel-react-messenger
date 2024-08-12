@@ -20,6 +20,7 @@ return new class extends Migration
       $table->timestamp('email_verified_at')->nullable();
       $table->string('password');
       $table->boolean('is_admin')->default(false);
+      $table->timestamp('last_seen')->nullable()->default(null);
       $table->timestamp('blocked_at')->nullable();
       $table->rememberToken();
       $table->timestamps();

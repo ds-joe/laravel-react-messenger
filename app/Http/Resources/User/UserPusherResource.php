@@ -17,10 +17,15 @@ class UserPusherResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'full_name' => $this->full_name,
             'email' => $this->email,
             'phone' => $this->phone,
-            'avatar' => $this->avatar
+            'avatar' => $this->avatar,
+            'last_seen' => $this->last_seen,
+            'is_admin' => $this->is_admin,
+            'blocked_at' => $this->blocked_at,
+            'created_at' => $this->created_at,
         ];
     }
 }
