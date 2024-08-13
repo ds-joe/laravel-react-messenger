@@ -6,5 +6,8 @@ return [
   'delete_chat' => "Delete Chat History",
   'block_user' => "Block User",
   'last_seen' => "Last seen",
-  'online' => "Online"
+  'online' => "Online",
+  'create_group' => "Create Group",
+  'new_chat' => "New Chat",
+  'search' => "Search"
 ];

@@ -9,6 +9,7 @@ import type { RootState } from "@/redux/store";
 
 // Components
 import ChatSidebarUser from "../ChatSidebarUser";
+import ChatSidebarHeader from "./Components/Header";
 
 // Utils
 import cn from "@/utils/tailwindCn";
@@ -41,25 +42,27 @@ const ChatSidebar: RC = () => {
 
   return (
     <aside className={cn(
-      `md:min-w-80 md:max-w-80 min-h-[var(--dashboard-layout-content-height)] bg-base-100 overflow-y-auto border-r border-r-base-content/20 max-h-[var(--dashboard-layout-content-height)] transition-all`,
+      `md:min-w-80 md:max-w-80 min-h-[var(--dashboard-layout-content-height)] bg-base-100 overflow-y-hidden border-r border-r-base-content/20 max-h-[var(--dashboard-layout-content-height)] transition-all`,
       'absolute w-full md:relative z-[1] left-0',
       chatIsSelected && "-left-full md:left-0 transition-all"
     )}>
-      {
-        sidebarChats.map((chat) => (
-          <ChatSidebarUser
-            key={`${chat.is_group ? "group" : "user"}-${chat.id}`}
-            avatar={chat.is_user ? chat.avatar : undefined}
-            name={chat.is_group ? chat?.name : chat?.full_name}
-            lastMessage={chat.last_message}
-            lastMessageDate={chat.last_message_date}
-            isGroup={chat.is_group}
-            onClick={() => handleSetSelectedChat(chat)}
-            online={checkOnline(chat.id)}
-          />
-        ))
-      }
-
+      <ChatSidebarHeader />
+      <div className="min-h-[var(--chat-sidebar-content-height)] max-h-[var(--chat-sidebar-content-height)] overflow-y-auto">
+        {
+          sidebarChats.map((chat) => (
+            <ChatSidebarUser
+              key={`${chat.is_group ? "group" : "user"}-${chat.id}`}
+              avatar={chat.is_user ? chat.avatar : undefined}
+              name={chat.is_group ? chat?.name : chat?.full_name}
+              lastMessage={chat.last_message}
+              lastMessageDate={chat.last_message_date}
+              isGroup={chat.is_group}
+              onClick={() => handleSetSelectedChat(chat)}
+              online={checkOnline(chat.id)}
+            />
+          ))
+        }
+      </div>
     </aside>
   )
 }

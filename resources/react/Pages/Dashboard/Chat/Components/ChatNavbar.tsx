@@ -70,7 +70,7 @@ const ChatNavbar: RC = () => {
         <div tabIndex={0} role="button" className="btn btn-ghost rounded-full btn-sm text-xl"><HiEllipsisVertical /></div>
         <ul
           tabIndex={0}
-          className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+          className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow border border-base-content/20">
           <li><a><HiOutlineTrash /> {page_words?.delete_chat}</a></li>
           <li><a><GoBlocked /> {page_words?.block_user}</a></li>
         </ul>
