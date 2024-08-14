@@ -8,5 +8,7 @@ export type ChatsInitState = {
   selected: boolean;
   selectedChat?: SidebarChatData,
   onlineUsers: Record<string, UserPusherResource>,
-  sidebarChats: Array<SidebarChatData>
+  sidebarChats: Array<SidebarChatData>,
+  message: string;
+  attachments?: Array<File>
 }

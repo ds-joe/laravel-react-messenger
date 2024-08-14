@@ -9,5 +9,7 @@ return [
   'online' => "Online",
   'create_group' => "Create Group",
   'new_chat' => "New Chat",
-  'search' => "Search"
+  'search' => "Search",
+  'type_a_message' => "Type a message...",
+  'attachments' => "Attachments",
 ];

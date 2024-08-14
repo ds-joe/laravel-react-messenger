@@ -13,6 +13,6 @@ const chatsSettingsSlice = createSlice({
   reducers: chatsActions,
 })
 
-export const { setSelectedChat, unselectSidebarChat, setOnlineUsers, removeUser, addUser, setSidebarChats } = chatsSettingsSlice.actions;
+export const { setSelectedChat, unselectSidebarChat, setOnlineUsers, removeUser, addUser, setSidebarChats, setMessage, setAttachments, clearMessageAndAttachments } = chatsSettingsSlice.actions;
 
 export default chatsSettingsSlice.reducer

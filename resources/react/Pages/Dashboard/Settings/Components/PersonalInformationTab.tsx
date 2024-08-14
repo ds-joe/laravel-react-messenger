@@ -6,9 +6,12 @@ import { CardTitle } from "@/Components/Global/Cards";
 import Form, { FormInput, FormGroup, FormGroupDouble, FormErrors } from "@/Components/Global/Forms";
 import { FormEvent } from "react";
 
+// Types
+import type { User } from "@/types/Models/User";
+
 const PersonalInformationTab: RC = () => {
   const { page_words, auth } = usePage().props as PageProps;
-  const { data, setData, errors, post, processing } = useForm(Object.assign(auth.user, {
+  const { data, setData, errors, post, processing } = useForm<User & any>(Object.assign(auth.user, {
     password: "",
     confirm_password: "",
     avatar: null

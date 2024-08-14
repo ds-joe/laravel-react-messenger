@@ -34,7 +34,7 @@ const ChatNavbar: RC = () => {
   }
 
   return (
-    <nav className="bg-base-100 flex items-center justify-between px-4 py-2  shadow w-full h-[var(--chat-layout-user-navbar-height)]">
+    <nav className="bg-base-100 flex items-center justify-between px-4 py-2 border-b border-b-base-content/20  shadow w-full h-[var(--chat-layout-user-navbar-height)]">
       {/* Start Avatar and status div */}
       <div className="flex items-center gap-2">
         <button className="btn btn-sm btn-ghost md:hidden rounded-full" onClick={handleCloseChat}><FiArrowLeft /></button>

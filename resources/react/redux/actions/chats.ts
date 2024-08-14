@@ -92,4 +92,38 @@ export default {
     state.sidebarChats = sortedChat;
   },
 
+  /**
+   * Set Message
+   * 
+   * @param { ChatsInitState } state
+   * @param { PayloadAction<{ message: string, emoji: boolean }> } action
+   * @return { void }
+   */
+  setMessage: (state: ChatsInitState, action: PayloadAction<{ message: string, emoji: boolean }>): void => {
+    const { emoji, message } = action.payload;
+    state.message = emoji ? `${state.message}${message}` : message;
+  },
+
+  /**
+   * Set attachments
+   * 
+   * @param { ChatsInitState } state
+   * @param { PayloadAction<Array<File>> } action
+   * @return { void }
+   */
+  setAttachments: (state: ChatsInitState, action: PayloadAction<Array<File>>): void => {
+    state.attachments = action.payload;
+  },
+
+  /**
+   * Clear message and attachments.
+   * 
+   * @param { ChatsInitState } state
+   * @return { void }
+   */
+  clearMessageAndAttachments: (state: ChatsInitState): void => {
+    state.message = "";
+    state.attachments = undefined;
+  }
+
 }
