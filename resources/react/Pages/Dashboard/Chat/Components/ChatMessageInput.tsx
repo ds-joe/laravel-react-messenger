@@ -17,9 +17,7 @@ import { IoIosRocket } from "react-icons/io";
 
 // Types
 import type { ChangeEvent } from "react";
-type ChatMessageInputProps = {
-  hasRecord?: boolean; // Enabled voice message
-}
+import type { ChatMessageInputProps } from "@/types/Components/Dashboard/Chat/Chat";
 
 const ChatMessageInput: RC<ChatMessageInputProps> = ({ hasRecord }) => {
   const { page_words } = usePage().props as PageProps;
@@ -75,7 +73,7 @@ const ChatMessageInput: RC<ChatMessageInputProps> = ({ hasRecord }) => {
 
       {/* Start Shortcut icons */}
       <div className="flex items-center gap-2 w-fit">
-        <label htmlFor="message-attachments" className="btn btn-ghost btn-xs text-2xl px-0">
+        <label htmlFor="message-attachments" className="btn btn-ghost btn-xs text-2xl px-0 max-w-full overflow-x-hidden">
           <MdAttachFile />
         </label>
         <div className="dropdown dropdown-top dropdown-start flex items-center">
