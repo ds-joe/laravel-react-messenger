@@ -6,7 +6,7 @@ import type { FormInputProps } from "@/types/Components/Global/Forms";
 
 const FormInput: RC<FormInputProps> = (props) => {
   return (
-    <label className={cn(`form-control w-full`, props.className)}>
+    <label className={cn(`form-control w-full`)}>
       {
         props.label && <div className="label">
           <span className="label-text">{props?.label}</span>
@@ -19,7 +19,8 @@ const FormInput: RC<FormInputProps> = (props) => {
             {...props as any}
             className={cn(
               props.type == 'file' ? " file-input file-input-sm file-input-bordered" : "input input-sm  input-bordered",
-              `w-full text-start ${props.error && "input-error"}`
+              `w-full text-start ${props.error && "input-error"}`,
+              props.className
             )
             } />
         ) : (
@@ -27,7 +28,8 @@ const FormInput: RC<FormInputProps> = (props) => {
             {...props}
             className={cn(
               props.type == 'file' ? " file-input file-input-sm file-input-bordered" : "input input-sm  input-bordered",
-              `w-full ${props.error && "input-error"}`
+              `w-full ${props.error && "input-error"}`,
+              props.className
             )} />
         )
       }

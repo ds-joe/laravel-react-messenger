@@ -136,7 +136,7 @@ class User extends Authenticatable
       'updated_at' => $user->updated_at,
       'blocked_at' => $user->blocked_at,
       'last_message' => $user->last_message,
-      'last_message_date' => Carbon::parse($user->last_message_date)->format('M-d H:i A'),
+      'last_message_date' => Carbon::parse($user->last_message_date)->format('M d'),
       'avatar' => $user->avatar ? Storage::getFileUrl($user->avatar) : null
     ];
   }

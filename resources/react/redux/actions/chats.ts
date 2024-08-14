@@ -81,7 +81,15 @@ export default {
    * @return { void }
    */
   setSidebarChats: (state: ChatsInitState, action: PayloadAction<Array<SidebarChatData>>): void => {
-    state.sidebarChats = action.payload;
+    const sortedChat = action.payload.sort((a, b) => {
+      const dateA = new Date(a.last_message_date);
+      const dateB = new Date(b.last_message_date);
+      if (dateA > dateB) return -1;
+      if (dateA < dateB) return 1;
+      return 0;
+    });
+
+    state.sidebarChats = sortedChat;
   },
 
 }

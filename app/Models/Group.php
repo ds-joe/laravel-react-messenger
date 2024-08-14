@@ -89,7 +89,7 @@ class Group extends Model
       'updated_at' => $group->updated_at,
       'blocked_at' => $group->blocked_at,
       'last_message' => $group->last_message,
-      'last_message_date' => Carbon::parse($group->last_message_date)->format('M-d H:i A'),
+      'last_message_date' => Carbon::parse($group->last_message_date)->format('M d'),
     ];
   }
 }

@@ -24,7 +24,7 @@ const ChatSidebarUser: RC<ChatSidebarUserProps> = ({ onClick, isGroup, name, ava
       {
         !isGroup ? (
           <div className={cn(`avatar`, `${online ? "online" : 'offline'}`)}>
-            <div className="w-12 rounded-full">
+            <div className="w-8 rounded-full">
               <img
                 src={avatar ?? placeholderAvatar}
                 alt={name}

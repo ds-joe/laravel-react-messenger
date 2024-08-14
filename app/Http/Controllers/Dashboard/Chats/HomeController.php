@@ -25,6 +25,7 @@ class HomeController extends ChatController
       $users = User::getUserChats($user);
       $groups = Group::getUserChats($user);
 
+
       return $users->map(function ($user) {
         return User::toChatArray($user);
       })->concat($groups->map(function ($group) {
