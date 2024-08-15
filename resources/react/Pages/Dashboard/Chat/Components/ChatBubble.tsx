@@ -25,8 +25,8 @@ const ChatBubble: RC<ChatBubbleProps> = ({ date, message, avatar, position }) =>
         {/* <time className="text-xs opacity-50">12:45</time> */}
       </div>
       <div className={cn(
-        "chat-bubble",
-        position === 'end' && "chat-bubble-accent"
+        "chat-bubble min-h-9",
+        position === 'end' ? "chat-bubble-success" : "bg-base-100 text-base-content shadow"
       )}>{message}</div>
       {/* <div className="chat-footer opacity-50">Delivered</div> */}
     </div>

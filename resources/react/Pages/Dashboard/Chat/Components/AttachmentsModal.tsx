@@ -35,7 +35,7 @@ const AttachmentsModal: RC = () => {
 
   return (
     <div className="modal" role="dialog" id="message_attachments_modal">
-      <div className="modal-box">
+      <div className="modal-box overflow-visible">
         <h3 className="text-lg font-bold">{page_words?.attachments}</h3>
 
         <section className="flex flex-col mt-4 w-full">

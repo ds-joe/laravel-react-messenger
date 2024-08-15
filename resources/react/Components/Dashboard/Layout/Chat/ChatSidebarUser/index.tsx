@@ -1,11 +1,6 @@
 // Components
 import GroupAvatar from "../GroupAvatar";
-
-// Utils
-import cn from "@/utils/tailwindCn";
-
-// Assets
-import placeholderAvatar from "~/images/auth/user-avatar.png";
+import UserAvatar from "../UserAvatar";
 
 // Types
 import type { ChatSidebarUserProps } from "@/types/Components/Dashboard/Chat/ChatSidebar";
@@ -23,14 +18,7 @@ const ChatSidebarUser: RC<ChatSidebarUserProps> = ({ onClick, isGroup, name, ava
       {/* Start avatar Div */}
       {
         !isGroup ? (
-          <div className={cn(`avatar`, `${online ? "online" : 'offline'}`)}>
-            <div className="w-8 rounded-full">
-              <img
-                src={avatar ?? placeholderAvatar}
-                alt={name}
-              />
-            </div>
-          </div>
+          <UserAvatar className="w-9" placeholderName={name} avatar={avatar} online={online} />
         ) : <GroupAvatar />
       }
       {/* End avatar Div */}

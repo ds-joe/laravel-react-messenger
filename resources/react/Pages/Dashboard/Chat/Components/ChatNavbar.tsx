@@ -8,14 +8,12 @@ import type { RootState } from "@/redux/store";
 
 // Components
 import GroupAvatar from "@/Components/Dashboard/Layout/Chat/GroupAvatar";
+import UserAvatar from "@/Components/Dashboard/Layout/Chat/UserAvatar";
 
 // Icons
 import { FiArrowLeft } from "react-icons/fi";
 import { HiEllipsisVertical, HiOutlineTrash } from "react-icons/hi2";
 import { GoBlocked } from "react-icons/go";
-
-// Assets
-import placeholderAvatar from "~/images/auth/user-avatar.png";
 
 const ChatNavbar: RC = () => {
   const { selectedChat, onlineUsers } = useSelector((state: RootState) => state.chatsSlice);
@@ -42,11 +40,7 @@ const ChatNavbar: RC = () => {
 
           {
             selectedChat?.is_group ? <GroupAvatar className="min-w-10 min-h-10" /> : (
-              <div className="avatar">
-                <div className="w-10 rounded-full">
-                  <img src={selectedChat?.avatar ?? placeholderAvatar} />
-                </div>
-              </div>
+              <UserAvatar className="w-9" placeholderName={selectedChat?.full_name || ""} avatar={selectedChat?.avatar} online={checkOnline(selectedChat?.id || 0)} />
             )
           }
 
