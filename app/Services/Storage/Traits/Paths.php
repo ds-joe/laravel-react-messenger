@@ -2,6 +2,7 @@
 
 namespace App\Services\Storage\Traits;
 
+use App\Models\MessageAttachment;
 use App\Models\User;
 use Illuminate\Support\Facades\Vite;
 
@@ -22,7 +23,8 @@ trait Paths
   public function __construct()
   {
     $this->PATHS = [
-      User::class => "users"
+      User::class => "users",
+      MessageAttachment::class => "messages/attachments"
     ];
   }
 

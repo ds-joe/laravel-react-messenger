@@ -28,7 +28,7 @@ class Storage
     $newFilename = md5($filename . time()) . '.' . $extension;
 
     # Store the file using the specified disk
-    return  $file->storeAs($path, $newFilename, 'public');
+    return $file->storeAs($path, $newFilename, 'public');
   }
 
   /**

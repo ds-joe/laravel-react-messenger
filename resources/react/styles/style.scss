@@ -9,3 +9,12 @@
 // Core
 @import "./scss/variables";
 @import "./scss/root";
+
+// user online and offline
+.sidebar-user-chat {
+
+  .online::before,
+  .offline::before {
+    @apply w-[11px] h-[11px] outline-1 right-[1%] top-[1%];
+  }
+}

@@ -26,49 +26,9 @@ const Chat: RP = () => {
       avatar: "https://fakeimg.pl/50x50/?text=A1&font=lobster",
       position: "start",
     },
-    {
-      message: "I'm good, thanks! How about you?",
-      date: "Jun 4, 2024, 10:31 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A2&font=lobster",
-      position: "end",
-    },
-    {
-      message: "Doing well, just working on a project. It's been pretty busy lately.",
-      date: "Jun 4, 2024, 10:32 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A1&font=lobster",
-      position: "start",
-    },
-    {
-      message: "I can relate! What project are you working on?",
-      date: "Jun 4, 2024, 10:33 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A2&font=lobster",
-      position: "end",
-    },
-    {
-      message: "It's a web app for a client. Lots of new features to implement.",
-      date: "Jun 4, 2024, 10:34 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A1&font=lobster",
-      position: "start",
-    },
-    {
-      message: "That sounds exciting! Need any help?",
-      date: "Jun 4, 2024, 10:35 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A2&font=lobster",
-      position: "end",
-    },
-    {
-      message: "Maybe later! I appreciate the offer, though.",
-      date: "Jun 4, 2024, 10:36 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A1&font=lobster",
-      position: "start",
-    },
-    {
-      message: "No problem. Just let me know!",
-      date: "Jun 4, 2024, 10:37 AM",
-      avatar: "https://fakeimg.pl/50x50/?text=A2&font=lobster",
-      position: "end",
-    },
-  ];
+  ]
+
+
 
 
   return (

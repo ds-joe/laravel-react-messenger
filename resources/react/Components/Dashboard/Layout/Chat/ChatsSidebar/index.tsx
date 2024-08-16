@@ -1,6 +1,6 @@
 // Dependencies
 import { useEffect } from "react";
-import { usePage } from "@inertiajs/react";
+import { usePage, router } from "@inertiajs/react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -30,6 +30,10 @@ const ChatSidebar: RC = () => {
 
   // Handle set selected chat
   const handleSetSelectedChat = (chat: SidebarChatData) => {
+    router.get(chat.is_group ? route('chat.user', chat.id) : route('chat.group', chat.id), {}, {
+      preserveState: true,
+    })
+
     dispatch(
       setSelectedChat(chat)
     )
@@ -37,7 +41,9 @@ const ChatSidebar: RC = () => {
 
   // Handle set user chats.
   useEffect(() => {
-    dispatch(setSidebarChats(userChats))
+    if (userChats) {
+      dispatch(setSidebarChats(userChats))
+    }
   }, [userChats]);
 
   return (

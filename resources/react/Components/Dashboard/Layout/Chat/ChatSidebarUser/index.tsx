@@ -13,7 +13,7 @@ const ChatSidebarUser: RC<ChatSidebarUserProps> = ({ onClick, isGroup, name, ava
   }
 
   return (
-    <div className=" flex items-center  gap-2 py-4 px-4 transition-all hover:bg-base-200 cursor-pointer " onClick={handleSelectedChat}>
+    <div className="sidebar-user-chat flex items-center gap-2 py-4 px-4 transition-all hover:bg-base-200 cursor-pointer " onClick={handleSelectedChat}>
 
       {/* Start avatar Div */}
       {
@@ -24,7 +24,6 @@ const ChatSidebarUser: RC<ChatSidebarUserProps> = ({ onClick, isGroup, name, ava
       {/* End avatar Div */}
       {/* Start content Div */}
       <div className="flex flex-col w-full">
-
         <div className="flex items-center justify-between w-full gap-2">
           <h1 className="text-sm font-semibold  line-clamp-1" title={name}>{name}</h1>
           <p className="text-xs font-medium text-base-content/70 line-clamp-1" title={lastMessageDate}>{lastMessageDate}</p>
